@@ -28,8 +28,6 @@ const Meter = React.forwardRef<HTMLProgressElement, MeterProps>(
     },
     ref
   ) => {
-    const percentage = value && max ? (value / max) * 100 : 0;
-
     return (
       <div className="w-full">
         {label && (
@@ -72,14 +70,6 @@ const Meter = React.forwardRef<HTMLProgressElement, MeterProps>(
             value={value}
             max={max}
             {...props}
-          />
-          <div
-            className={cn(
-              "absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 transition-opacity duration-500",
-              {
-                "opacity-100": percentage > 0,
-              }
-            )}
           />
         </div>
       </div>
