@@ -8,6 +8,14 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "author": {
+    "name": "David Amunga",
+    "email": "david@davidamunga.com",
+    "url": "https://davidamunga.com",
+    "github": "https://github.com/DavidAmunga",
+    "twitter": "https://twitter.com/davidamunga_",
+    "linkedin": "https://www.linkedin.com/in/davidamunga"
+  },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.1",

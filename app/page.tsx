@@ -1,7 +1,7 @@
 "use client";
 import { Meter } from "@/components/ui/meter";
 import { Card } from "@/components/ui/card";
-import { ClipboardIcon } from "lucide-react";
+import { ClipboardIcon, GithubIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { TabsContent, Tabs, TabsTrigger, TabsList } from "@/components/ui/tabs";
@@ -23,19 +23,33 @@ function Home() {
             <h1 className="text-3xl font-bold">shadcn-ui-meter</h1>
             <h2 className="text-xl">A React component for displaying meters</h2>
           </div>
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-          >
-            <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            <span className="sr-only">Toggle theme</span>
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() =>
+                window.open(
+                  "https://github.com/DavidAmunga/shadcn-ui-meter",
+                  "_blank"
+                )
+              }
+            >
+              <GithubIcon className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            >
+              <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+          </div>
         </div>
 
         <Tabs defaultValue="setup" className="space-y-4">
-          <TabsList>
+          <TabsList className="grid grid-cols-2">
             <TabsTrigger value="setup">Setup</TabsTrigger>
             <TabsTrigger value="usage">Usage</TabsTrigger>
           </TabsList>
