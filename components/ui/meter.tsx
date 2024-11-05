@@ -31,14 +31,14 @@ const Meter = React.forwardRef<HTMLProgressElement, MeterProps>(
     const percentage = value && max ? (value / max) * 100 : 0;
 
     return (
-      <div className="w-full space-y-1">
+      <div className="w-full">
         {label && (
           <div className="flex items-center justify-between text-sm">
             <span className="font-medium text-foreground/90">{label}</span>
             <span className="text-foreground/60">{valueLabel}</span>
           </div>
         )}
-        <div className="relative">
+        <div className="relative overflow-hidden rounded-md">
           <progress
             ref={ref}
             style={
@@ -49,7 +49,7 @@ const Meter = React.forwardRef<HTMLProgressElement, MeterProps>(
                 : undefined
             }
             className={cn(
-              "h-2 w-full [&::-webkit-progress-bar]:bg-secondary [&::-webkit-progress-value]:transition-all [&::-webkit-progress-value]:duration-500 [&::-moz-progress-bar]:transition-all [&::-moz-progress-bar]:duration-500",
+              "h-2 w-full rounded-full [&::-webkit-progress-value]:rounded-full [&::-webkit-progress-bar]:rounded-full [&::-webkit-progress-bar]:bg-secondary [&::-webkit-progress-value]:transition-all [&::-webkit-progress-value]:duration-500 [&::-moz-progress-bar]:transition-all [&::-moz-progress-bar]:duration-500",
               {
                 "h-1.5": size === "sm",
                 "h-2": size === "default",
